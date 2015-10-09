@@ -1,0 +1,17 @@
+if you cant restart mysql,and check the mysql.sock exist.you should do this:
+1.ps -A | grep mysql
+
+2.sudo pkill mysql
+
+3.ps -A | grep mysqld
+
+4.sudo pkill mysqld
+
+find the mysql.sock in your system;
+1.find / -name *.sock -type s
+
+if mysql.sock in /tmp/mysql.sock ,you should make a linked to /var/run/mysql/mysql.sock
+In -s /tmp/mysql.sock /var/run/mysql/mysql.sock
+
+then you can restart your mysql , or start a service of mysql
+/etc/init.d/mysql restart or service mysql restart
