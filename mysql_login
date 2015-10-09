@@ -1,0 +1,30 @@
+first , you should change /etc/mysql/my.cnf 
+bind-address = 127.0.0.1 
+to
+# bind-address = 127.0.0.1
+then restart your mysql service.
+
+
+
+login in mysql by root
+#mysql -u root -p
+
+mysql>grant all on *.* to root@'%' identified by 'pass';
+
+mysql>flush privileges;
+
+then you can login mysql in other computer by root route.
+
+
+if you want create a new database , and create a new user for it
+you can do like this:
+
+#mysql -u root -p
+
+mysql>create test;
+
+mysql>use test;
+
+mysql>grant all privileges on test.* to user1@'%' identified by 'pass1' with grant option;
+
+mysql>flush privileges;
