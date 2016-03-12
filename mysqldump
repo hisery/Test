@@ -1,0 +1,8 @@
+#mysql导出
+mysqldump -uroot -p abc > abc.sql
+
+create database editor_data_tf;
+use editor_data_tf;
+source ./editor_data_tf.2015-01-05-19:48:02.sql;
+GRANT ALL ON editor_data_tf.* TO tfdata IDENTIFIED BY "tfdata.tf.jj";
+flush privileges;
