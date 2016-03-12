@@ -21,7 +21,7 @@ you can do like this:
 
 #mysql -u root -p
 
-mysql>create test;
+mysql>create database test DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 mysql>use test;
 
